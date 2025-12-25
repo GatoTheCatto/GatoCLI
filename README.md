@@ -1,32 +1,36 @@
-# C CLI Foundation
+# GatoCLI
 
-This repository contains a tiny command-line program written in plain C so you can explore how a CLI is structured.
+This is the first README I'm writing mostly by myself, and I hardly know markdown, so bear with me.
 
-## Building
 
-```sh
-make
-```
+## Objective:
+- A small project to learn C
+- Something to help me learn the terminal more
+- ENTIRELY written in vim/nvim with minimal vibecoding!
 
-The build places the executable at `bin/cli-foundation`. You can change the compiler or flags by exporting `CC`/`CFLAGS` before running `make` (for example `CC=gcc CFLAGS='-std=c11 -O2' make`).
+## Usage
 
-## Running
-
-```
-bin/cli-foundation --help
-```
-
-You can explore the following commands:
-
-- `greet [name]` – prints a simple greeting (defaults to "there").
-- `repeat [count]` – prints a numbered notification that many times; the count must be a positive integer.
-- `--version` – shows the tool version.
-
-## Examples
+Run the compiled binary with a command and optional arguments:
 
 ```
-bin/cli-foundation greet Ada
-bin/cli-foundation repeat 3
+./gatocli <command> [options...]
 ```
 
-When you add new commands, update `src/main.c` and keep the usage text in sync. Feel free to replace the `repeat` example with a real task you want your CLI to perform.
+Most commands share a simple convention: the first argument is the command name and the rest are positional values such as a username or repeat count. Use `--help` or `-h` to see this message at any time, and `--version`/`-v` to check the bundled version string.
+
+## Commands
+
+| Command | Description | Notes |
+| --- | --- | --- |
+| `greet [name]` | Prints a friendly greeting. | Defaults to “there” when no name is supplied. |
+| `repeat <count>` | Prints numbered notifications. | Requires a positive integer count. |
+| `hello <count>` | Prints “Hello!” with a running number. | Requires a positive integer count. |
+| `banner [file]` | Dumps the contents of a banner file. | Defaults to `banner.txt` in the current directory. |
+| `--help`, `-h` | Show the usage summary. | |
+| `--version`, `-v` | Print the program version (`0.631.0`). | |
+
+If you invoke a command without the required arguments, the program explains what is missing and exits with a non-zero status.
+
+## Notes:
+- This is the first proper project I'm making public!
+- I don't know any C, so this project is helping me learn (though I do know Java and other languages which should hopefully make this experience easier for me)
