@@ -36,7 +36,7 @@ sudo make uninstall
 Run the compiled binary with a command and optional arguments:
 
 ```
-./gatocli <command> [options...]
+gatocli <command> [options...]
 ```
 
 Most commands share a simple convention: the first argument is the command name and the rest are positional values such as a username or repeat count. Use `--help` or `-h` to see this message at any time, and `--version`/`-v` to check the bundled version string.
