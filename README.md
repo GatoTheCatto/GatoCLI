@@ -1,4 +1,4 @@
-# GatoCLI
+# GatoCLI 0.631.0
 
 This is the first README I'm writing mostly by myself, and I hardly know markdown, so bear with me.
 
