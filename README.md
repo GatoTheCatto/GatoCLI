@@ -2,11 +2,22 @@
 
 This is the first README I'm writing mostly by myself, and I hardly know markdown, so bear with me.
 
-
 ## Objective:
 - A small project to learn C
 - Something to help me learn the terminal more
 - ENTIRELY written in vim/nvim with minimal vibecoding!
+
+## Build
+To build the project, simply run:
+```bash
+make
+```
+The compiled binary will then appear in the bin/ directory.
+
+To clean build artifacts, run:
+```bash
+make clean
+```
 
 ## Usage
 
