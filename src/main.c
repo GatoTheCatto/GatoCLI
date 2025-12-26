@@ -23,6 +23,7 @@ static void print_usage(const char *prog) {
     puts("  banner [file]         Print the contents of a banner file (default: banner.txt)");
     puts("  hello [count]         Repeats hello multiple times");
     puts("  add [num1] [num2]     Adds two integers");
+    puts("  echo [anything]       Repeats anything you say");
 }
 
 static void print_version(const char *prog) {
@@ -45,6 +46,12 @@ static void repeat_hello(int count){
     }
 }
 
+// TODO: maybe use this later?
+char *get_input(int allocatedBytes) {
+    char *buffer = malloc(allocatedBytes);
+    fgets(buffer, allocatedBytes, stdin);
+    return buffer;
+}
 
 static int parse_positive_int(const char *text) {
     if (!text) {
@@ -149,10 +156,10 @@ int main(int argc, char *argv[]) {
         if (argc >= 4) {
             result = add_integers(parse_positive_int(argv[2]), parse_positive_int(argv[3]));
         } else {
-            fprintf(stderr, "Please put at least 2 argments for this option");
+            fprintf(stderr, "Please put at least 2 argments for this option\n");
             return 1;
         }
-        printf("The result of the operation was: %d", result);
+        printf("The result of the operation was: %d\n", result);
         return 0;
     }
 
@@ -177,7 +184,7 @@ int main(int argc, char *argv[]) {
             }
             count = parsed;
         } else {
-            fprintf(stderr, "Please put at least 1 argument for this option.");
+            fprintf(stderr, "Please put at least 1 argument for this option.\n");
             return 1;
         }
         repeat_notification(count);
@@ -199,10 +206,23 @@ int main(int argc, char *argv[]) {
             }
             repeat_hello(parsed);
         } else {
-            fprintf(stderr, "Please put at least 1 argument for this option.");
+            fprintf(stderr, "Please put at least 1 argument for this option.\n");
             return 1;
         }
         // fprintf(stderr, "This is just for testing and has not been fully implemented yet! This will repeat %d times, despite your input of %d.", times, parse_positive_int(argv[2]));
+        return 0;
+    }
+
+    if (strcmp(command, "echo") == 0) {
+        if (argc < 3) {
+            fprintf(stderr, "Please put at least 2 arguments for this option (including echo).\n");
+            return 1;
+        }
+
+        for (int i = 2; i < argc; ++i) {
+            printf("%s ", argv[i]);
+        }
+        printf("\n");
         return 0;
     }
 
