@@ -256,9 +256,10 @@ int main(int argc, char *argv[]) {
 
     if (strcmp(command, "test") == 0) {
         for (int i = 0; i < argc; i++) {
-            printf("%s", argv[i]);
+            printf("%s ", argv[i]);
         }
         printf("\n");
+        return 0;
     }
 
     if (strcmp(command, "count") == 0) {
