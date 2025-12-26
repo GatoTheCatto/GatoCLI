@@ -18,13 +18,13 @@ static void print_usage(const char *prog) {
     puts("Commands:");
     puts("  greet [name]          Print a friendly greeting (default: there)");
     puts("  repeat [count]        Print a numbered notification multiple times");
-    puts("  --help, -h            Show this help message");
-    puts("  --version, -v         Show version information");
     puts("  banner [file]         Print the contents of a banner file (default: banner.txt)");
     puts("  hello [count]         Repeats hello multiple times");
     puts("  add [num1] [num2]     Adds two integers");
     puts("  echo [sentence]       Repeats anything you say");
     puts("  test [unspecified]    A testing command for developers");
+    puts("  --version, -v         Show version information");
+    puts("  --help, -h            Show this help message");
 }
 
 static void print_version(const char *prog) {
