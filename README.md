@@ -48,6 +48,9 @@ Most commands share a simple convention: the first argument is the command name 
 | `greet [name]` | Prints a friendly greeting. | Defaults to “there” when no name is supplied. |
 | `repeat <count>` | Prints numbered notifications. | Requires a positive integer count. |
 | `hello <count>` | Prints “Hello!” with a running number. | Requires a positive integer count. |
+| `add <num1> <num2>` | Adds two integers and prints the sum. | Requires two positive integers. |
+| `echo [sentence]` | Repeats the provided words verbatim. | Needs at least one word to repeat. |
+| `test` | Runs a simple developer test message. | |
 | `banner [file]` | Dumps the contents of a banner file. | Defaults to `banner.txt` in the current directory. |
 | `--help`, `-h` | Show the usage summary. | |
 | `--version`, `-v` | Print the program version (`0.631.0`). | |
