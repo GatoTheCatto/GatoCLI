@@ -24,6 +24,7 @@ static void print_usage(const char *prog) {
     puts("  hello [count]         Repeats hello multiple times");
     puts("  add [num1] [num2]     Adds two integers");
     puts("  echo [anything]       Repeats anything you say");
+    puts("  test [unspecified]    A testing command for developers");
 }
 
 static void print_version(const char *prog) {
@@ -53,6 +54,10 @@ char *get_input(int allocatedBytes) {
     char *buffer = malloc(allocatedBytes);
     fgets(buffer, allocatedBytes, stdin);
     return buffer;
+}
+
+static void test() {
+   printf("testing!"); 
 }
 
 static int parse_positive_int(const char *text) {
@@ -229,6 +234,11 @@ int main(int argc, char *argv[]) {
             printf("%s ", argv[i]);
         }
         printf("\n");
+        return 0;
+    }
+
+    if (strcmp(command, "test") == 0) {
+        test();
         return 0;
     }
 
