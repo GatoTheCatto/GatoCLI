@@ -56,8 +56,24 @@ char *get_input(int allocatedBytes) {
     return buffer;
 }
 
-static void test() {
-   printf("testing!"); 
+static int count_occurances(char string[], char occurance) {
+   
+    // this gets the size of the array because sizeof() returns the size of the array in bytes, and it divides that by the size of one element (in bytes)
+    // int length = sizeof(string) / sizeof(string[0]);
+    
+    // but we can just use strlen()
+    int length = strlen(string);
+    
+    int count = 0;
+
+    for (int i = 0; i < length; i++) {
+        if (string[i] == occurance) {
+            count++;
+        }        
+    }
+
+    //printf("The length of the string was: %d\nAnd '%c' occured %d times.", length, occurance, count); 
+    return count;
 }
 
 static int parse_positive_int(const char *text) {
@@ -238,7 +254,16 @@ int main(int argc, char *argv[]) {
     }
 
     if (strcmp(command, "test") == 0) {
-        test();
+        for (int i = 0; i < argc; i++) {
+            printf("%s", argv[i]);
+        }
+        printf("\n");
+    }
+
+    if (strcmp(command, "count") == 0) {
+       // char first_string[] = argv[2];
+       // char occurance_to_check_for = argv[3]; 
+       printf("There are %d occurences of '%c'", count_occurances(argv[2], *argv[3]), *argv[3]); // dereference argv3
         return 0;
     }
 
