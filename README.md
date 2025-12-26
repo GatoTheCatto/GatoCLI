@@ -55,6 +55,16 @@ Most commands share a simple convention: the first argument is the command name 
 | `--help`, `-h` | Show the usage summary. | |
 | `--version`, `-v` | Print the program version (`0.631.0`). | |
 
+### `count <sentence> <character>`
+
+Count reports how often a single character appears in the provided sentence. Wrap the sentence in quotes when it contains spaces and follow it with the character you want to count (only the first character of that argument is considered). Example:
+
+```bash
+gatocli count "Hello, world" o
+```
+
+This prints a message like `There are 2 occurrences of 'o'` and exits with `0`.
+
 If you invoke a command without the required arguments, the program explains what is missing and exits with a non-zero status.
 
 ## Notes:
