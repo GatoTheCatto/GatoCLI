@@ -29,6 +29,8 @@ static void print_usage(const char *prog) {
 	puts("  echo [sentence]              Repeats anything you say");
 	puts("  count [sentence] [character] Counts the occurrences of a certain "
 		 "character in a given sentence");
+	puts("  coinflip [times]			 Flips a coin a given amount of times. This happens once by default, if an amount of times is not given.");
+
 	puts("  test [unspecified]           A testing command for developers");
 	puts("  --version, -v                Show version information");
 	puts("  --help, -h                   Show this help message");
